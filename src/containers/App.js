@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Scroll from "../components/Scroll";
 import "./App.css";
+import "tachyons";
 
 class App extends Component {
     constructor() {
@@ -39,7 +40,7 @@ class App extends Component {
         return !robots.length ? 
         <h1 className="tc">Loading ...</h1> :
         (
-            <div className="tc">
+            <div className="tc center">
                 <h1>RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChange}/>
                 <Scroll>
